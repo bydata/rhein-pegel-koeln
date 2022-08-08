@@ -22,7 +22,7 @@ jobs:
         if: always()
         run: Rscript R/fetch-data.R
         
-        - name: Combined datasets
+      - name: Combined datasets
         if: always()
         run: Rscript R/merge-data.R
 
