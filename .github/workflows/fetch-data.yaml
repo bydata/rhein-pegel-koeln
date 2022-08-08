@@ -16,11 +16,12 @@ jobs:
       - name: Install packages
         run: |
           R -e 'install.packages("xml2")'
+          R -e 'install.packages("purrr")'
       
       # Run R script to fetch data from endpoint
       - name: Fetch result
         if: always()
-        run: Rscript ./R/fetch-data.R
+        run: Rscript R/fetch-data.R
 
       - name: Commit files
         run: |
