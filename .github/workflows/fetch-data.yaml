@@ -21,6 +21,10 @@ jobs:
       - name: Fetch result
         if: always()
         run: Rscript R/fetch-data.R
+        
+        - name: Combined datasets
+        if: always()
+        run: Rscript R/merge-data.R
 
       - name: Commit files
         run: |
