@@ -4,7 +4,7 @@ on:
   schedule: 
     # runs every hour
     # - cron: '0 * * * *'
-    - cron: '0,15,30,35,38,45 * * * *'
+    - cron: '0,15,30,45,52,55 * * * *'
 
 name: get-water-level
 
