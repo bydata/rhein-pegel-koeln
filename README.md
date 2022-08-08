@@ -2,5 +2,5 @@
 Script that fetches and stores the current water level of the Rhine in Cologne, Germany
 
 <!-- badges: start -->
-[![fetch-data](https://github.com/bydata/rhein-pegel-koeln/workflows/fetch-data/badge.svg)](https://github.com/bydata/rhein-pegel-koeln/actions)
+[![get-water-level](https://github.com/bydata/rhein-pegel-koeln/actions/workflows/fetch-data.yaml/badge.svg)](https://github.com/bydata/rhein-pegel-koeln/actions/workflows/fetch-data.yaml)
 <!-- badges: end -->
