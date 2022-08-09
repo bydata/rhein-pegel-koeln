@@ -1,8 +1,5 @@
 library(xml2)
 
-# set locale to DE time format
-Sys.setlocale("LC_TIME", locale = "de_DE")
-
 # get the data from the endpoint
 endpoint <- "https://www.stadt-koeln.de/interne-dienste/hochwasser/pegel_ws.php"
 result <- read_xml(endpoint)
@@ -11,14 +8,12 @@ result <- read_xml(endpoint)
 result_list <- purrr::flatten(purrr::flatten(as_list(result)))
 df <- as.data.frame(result_list)
 
-# format data
+# format dataset
 df$Grafik <- NULL
-df$Pegel <- as.numeric(gsub(",", ".", df$Pegel))
-str(df)
-df$Datum2 <- strptime(df$Datum, "%d. %B %Y", tz = "Europe/Berlin")
+df$Pegel <- gsub(",", ".", df$Pegel)
 
 # store result
 write.csv(
   df, 
-  file.path("data", paste0("pegel-", format(Sys.time(), "%Y%m%d%H%M%S"), ".csv")),
+  file.path("data", "fetched-results", paste0("pegel-", format(Sys.time(), "%Y%m%d%H%M%S"), ".csv")),
   row.names = FALSE)
