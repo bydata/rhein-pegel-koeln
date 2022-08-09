@@ -3,13 +3,13 @@ name: get-water-level
 on:
   schedule: 
     # runs every hour
-    # - cron: '0 * * * *'
-    - cron: '0/15 * * * *'
+    - cron: '0 * * * *'
     
 jobs:
   fetch-data:
     runs-on: ubuntu-latest
     
+    # Set up R environment with packages used in the R scripts
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
@@ -23,11 +23,13 @@ jobs:
       - name: Fetch result
         if: always()
         run: Rscript R/fetch-data.R
-        
-      - name: Combine datasets
-        if: always()
-        run: Rscript R/merge-data.R
+      
+      # Merge datasets
+      # - name: Combine datasets
+      #  if: always()
+      #  run: Rscript R/merge-data.R
 
+      # Push new files into repo
       - name: Commit files
         run: |
           git config --local user.name actions-user
