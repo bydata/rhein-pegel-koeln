@@ -3,7 +3,8 @@ name: get-water-level
 on:
   schedule: 
     # runs every hour
-    - cron: '0 * * * *'
+    # - cron: '0 * * * *'
+    - cron: '0/10 * * * *'
     
 jobs:
   fetch-data:
