@@ -16,13 +16,14 @@ jobs:
         run: |
           R -e 'install.packages("xml2")'
           R -e 'install.packages("purrr")'
+          R -e 'install.packages("dplyr")'
       
       # Run R script to fetch data from endpoint
       - name: Fetch result
         if: always()
         run: Rscript R/fetch-data.R
         
-      - name: Combined datasets
+      - name: Combine datasets
         if: always()
         run: Rscript R/merge-data.R
 
