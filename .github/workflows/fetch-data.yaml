@@ -29,7 +29,7 @@ jobs:
       - name: Combine datasets
        if: always()
        run: |
-         Sys.setlocale("LC_TIME", "de_DE.UTF-8")
+         R -e 'Sys.setlocale("LC_TIME", "de_DE.UTF-8")'
          Rscript R/merge-data.R
 
       # Push new files into repo
