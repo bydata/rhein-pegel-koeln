@@ -21,6 +21,7 @@ result <- combined %>%
          datetime_str_en = paste(date_str_en, Uhrzeit),
          date = strptime(date_str_en, "%d. %B %Y", tz = "Europe/Berlin"),
          datetime = strptime(datetime_str_en, "%d. %B %Y %H:%M", tz = "Europe/Berlin")) %>% 
+  arrange(datetime) %>% 
   select(date, datetime, water_level = Pegel)
 
 write.csv(result, file.path("data", "pegel-combined.csv"), row.names = FALSE)
