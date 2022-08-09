@@ -19,6 +19,7 @@ jobs:
           R -e 'install.packages("xml2")'
           R -e 'install.packages("purrr")'
           R -e 'install.packages("dplyr")'
+          R -e 'install.packages("stringr")'
       
       # Run R script to fetch data from endpoint
       - name: Fetch result
