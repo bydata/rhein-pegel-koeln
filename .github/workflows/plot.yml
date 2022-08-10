@@ -1,4 +1,4 @@
-name: get-water-level
+name: plot-water-level
 
 on:
   schedule: 
