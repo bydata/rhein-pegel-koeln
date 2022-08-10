@@ -9,6 +9,10 @@ Licence: [Datenlizenz Deutschland – Zero – Version 2.0](https://www.govdata.
 ![Wasserpegel](plots/wasserpegel-live.png)
 
 
+![Wasserpegel](plots/wasserpegel-live-reference.png)
+
+
+
 ## Github Actions Workflow
 <!-- badges: start -->
 [![get-water-level](https://github.com/bydata/rhein-pegel-koeln/actions/workflows/fetch-data.yaml/badge.svg)](https://github.com/bydata/rhein-pegel-koeln/actions/workflows/fetch-data.yaml)
