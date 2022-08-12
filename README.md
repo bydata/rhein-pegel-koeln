@@ -6,8 +6,6 @@ Licence: [Datenlizenz Deutschland – Zero – Version 2.0](https://www.govdata.
 
 ## Pegelstand aktuell
 
-`Sys.time()`
-
 ![Wasserpegel](plots/wasserpegel-live.png)
 <br><br>
 ![Wasserpegel](plots/wasserpegel-live-smoothed.png)
