@@ -4,6 +4,7 @@ df <- readr::read_csv(file.path("data", "pegel-combined.csv"))
 
 ggplot(df, aes(datetime, water_level)) +
   geom_step(color = "steelblue") +
+  scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
   coord_cartesian(ylim = c(0.5, NA)) +
   labs(
     title = "Pegelstand des Rheins bei Köln",
@@ -29,6 +30,7 @@ ggplot(df, aes(datetime, water_level)) +
   geom_point(color = "grey50") +
   geom_smooth(method = "loess", se = TRUE, span = 0.3, color = "steelblue",
               fill = alpha("#B9DAFF", 0.7)) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
   coord_cartesian(ylim = c(0.5, NA)) +
   labs(
     title = "Pegelstand des Rheins bei Köln",
@@ -60,6 +62,7 @@ ggplot(df, aes(datetime, water_level)) +
   annotate("label", label = "Normalpegel 3,48m",
            x = min(df$datetime), y = 3.48,
            hjust = 0, vjust = 0, label.size = 0, fill = alpha("grey8", 0.2)) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
   coord_cartesian(ylim = c(0, 9)) +
   labs(
     title = "Pegelstand des Rheins bei Köln",
