@@ -2,10 +2,12 @@ library(ggplot2)
 
 df <- readr::read_csv(file.path("data", "pegel-combined.csv"))
 
+ylim_lower <- 0.6
+
 ggplot(df, aes(datetime, water_level)) +
   geom_step(color = "steelblue") +
   scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
-  coord_cartesian(ylim = c(0.5, NA)) +
+  coord_cartesian(ylim = c(ylim_lower, NA)) +
   labs(
     title = "Pegelstand des Rheins bei Köln",
     caption = "Stadtentwässerungsbetriebe Köln, Stadt Köln",
@@ -31,7 +33,7 @@ ggplot(df, aes(datetime, water_level)) +
   geom_smooth(method = "loess", se = TRUE, span = 0.3, color = "steelblue",
               fill = alpha("#B9DAFF", 0.7)) +
   scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
-  coord_cartesian(ylim = c(0.5, NA)) +
+  coord_cartesian(ylim = c(ylim_lower, NA)) +
   labs(
     title = "Pegelstand des Rheins bei Köln",
     caption = "Stadtentwässerungsbetriebe Köln, Stadt Köln",
