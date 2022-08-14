@@ -11,7 +11,9 @@ Lizenz: [Datenlizenz Deutschland – Zero – Version 2.0](https://www.govdata.d
 <br><br>
 ![Wasserpegel](plots/wasserpegel-live-reference.png)
 
+## Pegelstand und Wassertiefe
 
+[https://www.swr.de/swraktuell/rheinland-pfalz/was-ist-ein-pegel-erklaerung-100.html](https://www.swr.de/swraktuell/rheinland-pfalz/was-ist-ein-pegel-erklaerung-100.html)
 
 ## Github Actions Workflow
 <!-- badges: start -->
