@@ -58,8 +58,9 @@ ggplot(df, aes(datetime, water_level)) +
   geom_point(color = "grey50", size = 0.2) +
   geom_smooth(method = "loess", se = TRUE, span = 0.3, color = "steelblue",
               fill = alpha("#B9DAFF", 0.7)) +
-  scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
-  coord_cartesian(ylim = c(0, 3)) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ","),
+                     breaks = seq(0.5, 8, 0.5)) + 
+  coord_cartesian(ylim = c(0.5, 3)) +
   labs(
     title = "Pegelstand des Rheins bei Köln",
     caption = "Stadtentwässerungsbetriebe Köln, Stadt Köln",
@@ -75,7 +76,7 @@ ggplot(df, aes(datetime, water_level)) +
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank()
   )
-ggsave(file.path("plots", "wasserpegel-live-smoothed.3m.png"), width = 5, height = 4,
+ggsave(file.path("plots", "wasserpegel-live-smoothed-3m.png"), width = 5, height = 4,
        scale = 1.5)
 
 
@@ -88,7 +89,7 @@ ggplot(df, aes(datetime, water_level)) +
   geom_area(fill = "steelblue") +
   geom_hline(aes(yintercept = 2.97), col = "grey20") +
   annotate("label", label = "Langfristiger Durchschnitt 2,97m",
-           x = min(df$datetime), y = 3.48,
+           x = min(df$datetime), y = 2.97,
            hjust = 0, vjust = 0, label.size = 0, fill = alpha("grey8", 0.2)) +
   scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
   coord_cartesian(ylim = c(0, 9)) +
