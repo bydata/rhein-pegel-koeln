@@ -30,7 +30,7 @@ ggsave(file.path("plots", "wasserpegel-live.png"), width = 5, height = 4,
 
 ggplot(df, aes(datetime, water_level)) +
   geom_point(color = "grey50") +
-  geom_smooth(method = "loess", se = TRUE, span = 0.3, color = "steelblue",
+  geom_smooth(method = "loess", se = TRUE, span = 0.1, color = "steelblue",
               fill = alpha("#B9DAFF", 0.7)) +
   scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
   coord_cartesian(ylim = c(ylim_lower, NA)) +
@@ -56,7 +56,7 @@ ggsave(file.path("plots", "wasserpegel-live-smoothed.png"), width = 5, height = 
 
 ggplot(df, aes(datetime, water_level)) +
   geom_point(color = "grey50", size = 0.2) +
-  geom_smooth(method = "loess", se = TRUE, span = 0.3, color = "steelblue",
+  geom_smooth(method = "loess", se = TRUE, span = 0.1, color = "steelblue",
               fill = alpha("#B9DAFF", 0.7)) +
   scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ","),
                      breaks = seq(0.5, 8, 0.5)) + 
