@@ -60,7 +60,7 @@ ggplot(df, aes(datetime, water_level)) +
               fill = alpha("#B9DAFF", 0.7)) +
   scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ","),
                      breaks = seq(0.5, 8, 0.5)) + 
-  coord_cartesian(ylim = c(0.5, 3)) +
+  coord_cartesian(ylim = c(0.5, 4)) +
   labs(
     title = "Pegelstand des Rheins bei Köln",
     caption = "Stadtentwässerungsbetriebe Köln, Stadt Köln",
