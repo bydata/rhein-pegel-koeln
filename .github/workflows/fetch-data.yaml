@@ -19,6 +19,7 @@ jobs:
           R -e 'install.packages("purrr")'
           R -e 'install.packages("dplyr")'
           R -e 'install.packages("stringr")'
+          R -e 'install.packages("testthat")'
       
       # Run R script to fetch data from endpoint
       - name: Fetch result
@@ -31,6 +32,11 @@ jobs:
         run: |
           R -e 'Sys.setlocale("LC_ALL", "de_DE.UTF-8")'
           Rscript R/merge-data.R
+          
+      # Delete raw file
+      - name: Delete raw file
+        if: always()
+        run: rm fetched-data/*
 
       # Push new files into repo
       - name: Commit files
