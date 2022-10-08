@@ -36,7 +36,7 @@ jobs:
       # Delete raw file
       - name: Delete raw file
         if: always()
-        run: rm data/fetched-data/*
+        run: rm data/fetched-results/*
 
       # Push new files into repo
       - name: Commit files
