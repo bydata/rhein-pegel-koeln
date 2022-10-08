@@ -31,4 +31,4 @@ new_combined <- bind_rows(combined, result) %>%
 
 # throws an error if file size is not correct and therefore interrupts the Github action
 testthat::expect_equal(nrow(new_combined), nrow(combined) + 1)
-write.csv(new_combined, "foo.csv", row.names = FALSE)
+write.csv(new_combined, filepath_combined, row.names = FALSE)
