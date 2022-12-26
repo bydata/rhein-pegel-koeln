@@ -19,7 +19,7 @@ jobs:
           R -e 'install.packages("readr")'
       
       # Run R script to fetch data from endpoint
-      - name: Fetch result
+      - name: Create plot
         if: always()
         run: Rscript R/plot.R
       
