@@ -1,0 +1,39 @@
+name: plot-water-level
+
+on:
+  schedule: 
+    # runs once every 2 hours
+    - cron: '0 */2 * * *'
+    
+jobs:
+  create-plot:
+    runs-on: ubuntu-latest
+    
+    # Set up R environment with packages used in the R scripts
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@v2
+      - name: Install packages
+        run: |
+          R -e 'install.packages("ggplot2")'
+          R -e 'install.packages("readr")'
+      
+      # Run R script to fetch data from endpoint
+      - name: Create plot
+        if: always()
+        run: Rscript R/plot.R
+      
+      # Push new files into repo
+      - name: Commit files
+        run: |
+          git config --local user.name actions-user
+          git config --local user.email "actions@github.com"
+          git pull
+          git add plots/*
+          git add README.md
+          git commit -am "Plot updated on $(date)"
+          git push origin main
+        env:
+          REPO_KEY: ${{secrets.GITHUB_TOKEN}}
+          username: github-actions
+      

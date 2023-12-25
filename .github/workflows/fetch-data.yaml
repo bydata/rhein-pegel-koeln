@@ -1,0 +1,53 @@
+name: get-water-level
+
+on:
+  schedule: 
+    # runs every hour
+    - cron: '0 * * * *'
+    
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    
+    # Set up R environment with packages used in the R scripts
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@v2
+      - name: Install packages
+        run: |
+          R -e 'install.packages("xml2")'
+          R -e 'install.packages("purrr")'
+          R -e 'install.packages("dplyr")'
+          R -e 'install.packages("stringr")'
+          R -e 'install.packages("testthat")'
+      
+      # Run R script to fetch data from endpoint
+      - name: Fetch result
+        if: always()
+        run: Rscript R/fetch-data.R
+      
+      # Merge datasets
+      - name: Combine datasets
+        if: always()
+        run: |
+          R -e 'Sys.setlocale("LC_ALL", "de_DE.UTF-8")'
+          Rscript R/merge-data.R
+          
+      # Delete raw file
+      - name: Delete raw file
+        if: always()
+        run: rm data/fetched-results/*
+
+      # Push new files into repo
+      - name: Commit files
+        run: |
+          git config --local user.name actions-user
+          git config --local user.email "actions@github.com"
+          git pull
+          git add data/*
+          git commit -am "Data fetch for $(date)"
+          git push origin main
+        env:
+          REPO_KEY: ${{secrets.GITHUB_TOKEN}}
+          username: github-actions
+          
