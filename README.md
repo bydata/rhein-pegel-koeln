@@ -5,9 +5,12 @@ Lizenz: [Datenlizenz Deutschland – Zero – Version 2.0](https://www.govdata.d
 
 ## Pegelstand aktuell
 
+
+![Wasserpegel](plots/wasserpegel-live-reference-1y.png)
+<br><br>
+<br><br>
 ![Wasserpegel](plots/wasserpegel-live-smoothed.png)
 <br><br>
-![Wasserpegel](plots/wasserpegel-live.png)
 <br><br>
 ![Wasserpegel](plots/wasserpegel-live-reference.png)
 
