@@ -3,16 +3,20 @@
 Quelle: Stadtentwässerungsbetriebe Köln, Stadt Köln [Offene Daten Köln](https://www.offenedaten-koeln.de/dataset/resource/2c576a84-337d-483f-ae72-15c9527049b5)<br>
 Lizenz: [Datenlizenz Deutschland – Zero – Version 2.0](https://www.govdata.de/dl-de/zero-2-0)
 
-## Pegelstand aktuell
+## Pegel 
 
+### 1 Jahr
 
 ![Wasserpegel](plots/wasserpegel-live-reference-1y.png)
-<br><br>
-<br><br>
-![Wasserpegel](plots/wasserpegel-live-smoothed.png)
-<br><br>
-<br><br>
+
+## Langfristig
+
 ![Wasserpegel](plots/wasserpegel-live-reference.png)
+
+### Geglättet
+
+![Wasserpegel](plots/wasserpegel-live-smoothed.png)
+
 
 ## Pegelstand und Wassertiefe
 
