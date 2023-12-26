@@ -17,6 +17,7 @@ jobs:
         run: |
           R -e 'install.packages("ggplot2")'
           R -e 'install.packages("readr")'
+          R -e 'install.packages("lubridate")'
       
       # Run R script to fetch data from endpoint
       - name: Create plot
