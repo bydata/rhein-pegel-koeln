@@ -9,7 +9,7 @@ Lizenz: [Datenlizenz Deutschland – Zero – Version 2.0](https://www.govdata.d
 
 ![Wasserpegel](plots/wasserpegel-live-reference-1y.png)
 
-## Langfristig
+### Langfristig
 
 ![Wasserpegel](plots/wasserpegel-live-reference.png)
 
