@@ -2,7 +2,7 @@ library(ggplot2)
 
 df <- readr::read_csv(file.path("data", "pegel-combined.csv"))
 
-ylim_lower <- 0.6
+ylim_lower <- 0
 
 ggplot(df, aes(datetime, water_level)) +
   geom_step(color = "steelblue") +
@@ -29,7 +29,7 @@ ggsave(file.path("plots", "wasserpegel-live.png"), width = 5, height = 4,
 
 
 ggplot(df, aes(datetime, water_level)) +
-  geom_point(color = "grey50") +
+  geom_point(color = "grey50", size = 0.2) +
   geom_smooth(method = "loess", se = TRUE, span = 0.1, color = "steelblue",
               fill = alpha("#B9DAFF", 0.7)) +
   scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
@@ -62,7 +62,7 @@ ggsave(file.path("plots", "wasserpegel-live-smoothed.png"), width = 5, height = 
 ggplot(df, aes(datetime, water_level)) +
   geom_area(fill = "steelblue") +
   geom_hline(aes(yintercept = 2.97), col = "grey20") +
-  annotate("label", label = "Langfristiger Durchschnitt 2,97m",
+  annotate("label", label = "Langfristiger Durchschnitt 2,97 m",
            x = min(df$datetime), y = 2.97,
            hjust = 0, vjust = 0, label.size = 0, fill = alpha("grey8", 0.2)) +
   scale_y_continuous(labels = scales::number_format(accuracy = 0.01, decimal.mark = ",")) + 
