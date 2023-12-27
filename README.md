@@ -5,6 +5,14 @@ Lizenz: [Datenlizenz Deutschland – Zero – Version 2.0](https://www.govdata.d
 
 ## Pegel 
 
+### 24 Stunden
+
+![Wasserpegel](plots/wasserpegel-live-reference-1d.png)
+
+### 1 Woche
+
+![Wasserpegel](plots/wasserpegel-live-reference-1w.png)
+
 ### 1 Jahr
 
 ![Wasserpegel](plots/wasserpegel-live-reference-1y.png)
