@@ -1,7 +1,7 @@
 name: get-water-level
 on:
   schedule: 
-    - cron: '*/15 * * * *'
+    - cron: '0 * * * *'
     
 jobs:
   fetch-data:
